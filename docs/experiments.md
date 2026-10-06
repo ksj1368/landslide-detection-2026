@@ -83,9 +83,9 @@ PYTORCH_ENABLE_MPS_FALLBACK=0 python scripts/run_ab_experiment.py \
 
 ## 다른 모델과 후반 실험
 
-아래는 검토된 결과 요약만 제공한다. 외부 구현·가중치와 전체 실행 코드를 이번 공개 범위에 넣지 않았다.
+아래에는 추가 모델·학습 방법의 비교 결과를 요약했다. 이 비교에 사용한 외부 구현·가중치와 전체 실행 코드는 포함하지 않았다.
 
-| 비교 | 기록에서 확인한 결과와 한계 |
+| 비교 | 실험 결과와 한계 |
 |---|---|
 | SegFormer-B0, 무작위 초기화 | 높은 학습률에서는 Presence 학습이 정체됐고, 낮춘 조건은 학습 손실이 감소해도 검증 손실이 증가했다. 선택 checkpoint의 최종 출력은 U-Net을 넘지 못했다. 사전학습 SegFormer의 성능 평가가 아니다. |
 | HRNet small-v1 | 시험한 Adam·SGD 조건 모두 기준보다 Presence·Shape 진단이 낮았다. optimizer 비교에서는 예산·일정도 함께 달라 단일 원인으로 해석하지 않았다. |
