@@ -1,0 +1,178 @@
+{
+  "recorded_date": "2026-09-21",
+  "prepared_date": "2026-10-05",
+  "platform_source": "Final competition results recorded by the project author; not independently re-queried.",
+  "participating_teams": 81,
+  "public_rank": 29,
+  "private_rank": 12,
+  "ensemble_independent_oof": null,
+  "local_holdout_definition": {
+    "evaluation_scope": "fixed_development_holdout_343",
+    "scorer_id": "scorer-doc-v1",
+    "input_count": 343,
+    "labeled_count": 319,
+    "positive_count": 120,
+    "negative_count": 199,
+    "missing_count": 24,
+    "shape_eligible_count": 89,
+    "shape_site_count": 9,
+    "invalid_gt_count": 2,
+    "small_positive_count": 29,
+    "presence_definition": "0.5 * (positive F1 + negative F1), based on final valid polygon presence",
+    "shape_definition": "eligible date polygon IoU averaged within site, then equally across sites",
+    "reference_total_definition": "0.6 * presence + 0.4 * shape_diagnostic",
+    "full_shape": null,
+    "full_total": null,
+    "reason": "invalid_positive_gt",
+    "tta": "d4",
+    "presence_threshold": "0.2",
+    "mask_threshold": "0.4"
+  },
+  "submissions": [
+    {
+      "submission_id": "S029",
+      "public_score_decimal": "0.7083913608",
+      "private_score_decimal": "0.7037690946",
+      "local_holdout": {
+        "presence_decimal": "0.9235609730687087",
+        "shape_diagnostic_decimal": "0.5097415851134193",
+        "reference_total_decimal": "0.758033217886593",
+        "shape": null,
+        "total": null,
+        "undefined_reason": "invalid_positive_gt",
+        "confusion": {
+          "tp": 110,
+          "tn": 186,
+          "fp": 13,
+          "fn": 10
+        }
+      }
+    },
+    {
+      "submission_id": "S030",
+      "public_score_decimal": "0.7244646681",
+      "private_score_decimal": "0.7051403543",
+      "local_holdout": {
+        "presence_decimal": "0.9433197111113434",
+        "shape_diagnostic_decimal": "0.5150019505716885",
+        "reference_total_decimal": "0.7719926068954814",
+        "shape": null,
+        "total": null,
+        "undefined_reason": "invalid_positive_gt",
+        "confusion": {
+          "tp": 112,
+          "tn": 190,
+          "fp": 9,
+          "fn": 8
+        }
+      }
+    },
+    {
+      "submission_id": "S031",
+      "public_score_decimal": "0.7224851498",
+      "private_score_decimal": "0.7046090122",
+      "local_holdout": {
+        "presence_decimal": "0.9533976124885215",
+        "shape_diagnostic_decimal": "0.5156043329286623",
+        "reference_total_decimal": "0.7782803006645778",
+        "shape": null,
+        "total": null,
+        "undefined_reason": "invalid_positive_gt",
+        "confusion": {
+          "tp": 114,
+          "tn": 191,
+          "fp": 8,
+          "fn": 6
+        }
+      }
+    },
+    {
+      "submission_id": "S032",
+      "public_score_decimal": "0.6959616782",
+      "private_score_decimal": "0.6883921898",
+      "local_holdout": {
+        "presence_decimal": "0.9593596059113301",
+        "shape_diagnostic_decimal": "0.58714900983764",
+        "reference_total_decimal": "0.810475367481854",
+        "shape": null,
+        "total": null,
+        "undefined_reason": "invalid_positive_gt",
+        "confusion": {
+          "tp": 110,
+          "tn": 197,
+          "fp": 2,
+          "fn": 10
+        }
+      }
+    }
+  ],
+  "component_oof": {
+    "scope": "D106 pooled outer folds; previously used development locations; not final ensemble OOF",
+    "input_count": 1348,
+    "labeled_count": 1282,
+    "shape_eligible_count": 381,
+    "shape_site_count": 33,
+    "small_positive_count": 140,
+    "invalid_gt_count": 1,
+    "shape": null,
+    "total": null,
+    "variants": [
+      {
+        "id": "E086 baseline",
+        "presence": 0.810612202,
+        "shape_diagnostic": 0.528286291,
+        "reference_total": 0.697681837,
+        "delta_vs_baseline": 0,
+        "fp": 114,
+        "fn": 120,
+        "small_fn": 41
+      },
+      {
+        "id": "E090 A",
+        "presence": 0.814076841,
+        "shape_diagnostic": 0.548139285,
+        "reference_total": 0.707701818,
+        "delta_vs_baseline": 0.010019981,
+        "fp": 114,
+        "fn": 116,
+        "small_fn": 41
+      },
+      {
+        "id": "E091 B",
+        "presence": 0.798971059,
+        "shape_diagnostic": 0.533191116,
+        "reference_total": 0.692659082,
+        "delta_vs_baseline": -0.005022755,
+        "fp": 141,
+        "fn": 110,
+        "small_fn": 35
+      }
+    ]
+  },
+  "e121_comparison": {
+    "S030": {
+      "presence": 0.9433197111113434,
+      "shape_diagnostic": 0.5150019505716885,
+      "reference_total": 0.7719926068954814,
+      "confusion": {
+        "tp": 112,
+        "tn": 190,
+        "fp": 9,
+        "fn": 8
+      },
+      "small_positive_fn_count": 6
+    },
+    "E121": {
+      "presence": 0.949104949104949,
+      "shape_diagnostic": 0.5579278996194753,
+      "reference_total": 0.7926341293107595,
+      "confusion": {
+        "tp": 108,
+        "tn": 196,
+        "fp": 3,
+        "fn": 12
+      },
+      "small_positive_fn_count": 8
+    }
+  }
+}

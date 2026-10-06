@@ -1,0 +1,161 @@
+{
+  "split_id": "fixed-group-holdout-v1-6f2d58d1a68c",
+  "seed": 42,
+  "group_count": 15,
+  "validation_group_count": 3,
+  "train_groups": [
+    "ls_scene_01_w01",
+    "ls_scene_01_w03",
+    "ls_scene_01_w05",
+    "ls_scene_01_w06",
+    "ls_scene_01_w07",
+    "ls_scene_01_w08",
+    "ls_scene_01_w09",
+    "ls_scene_01_w10",
+    "ls_scene_09_w01",
+    "ls_scene_11_w01",
+    "ls_scene_26_w01",
+    "ls_scene_31_w01"
+  ],
+  "validation_groups": [
+    "ls_scene_01_w04",
+    "ls_scene_08_w01",
+    "ls_scene_12_w01"
+  ],
+  "train_locations": [
+    "ls_scene_01_w01",
+    "ls_scene_01_w03",
+    "ls_scene_01_w05",
+    "ls_scene_01_w06",
+    "ls_scene_01_w07",
+    "ls_scene_01_w08",
+    "ls_scene_01_w09",
+    "ls_scene_01_w10",
+    "ls_scene_09_w01",
+    "ls_scene_11_w01",
+    "ls_scene_26_w01",
+    "ls_scene_31_w01"
+  ],
+  "validation_locations": [
+    "ls_scene_01_w04",
+    "ls_scene_08_w01",
+    "ls_scene_12_w01"
+  ],
+  "connected_groups": {
+    "ls_scene_01_w01": [
+      "ls_scene_01_w01"
+    ],
+    "ls_scene_01_w03": [
+      "ls_scene_01_w03"
+    ],
+    "ls_scene_01_w04": [
+      "ls_scene_01_w04"
+    ],
+    "ls_scene_01_w05": [
+      "ls_scene_01_w05"
+    ],
+    "ls_scene_01_w06": [
+      "ls_scene_01_w06"
+    ],
+    "ls_scene_01_w07": [
+      "ls_scene_01_w07"
+    ],
+    "ls_scene_01_w08": [
+      "ls_scene_01_w08"
+    ],
+    "ls_scene_01_w09": [
+      "ls_scene_01_w09"
+    ],
+    "ls_scene_01_w10": [
+      "ls_scene_01_w10"
+    ],
+    "ls_scene_08_w01": [
+      "ls_scene_08_w01"
+    ],
+    "ls_scene_09_w01": [
+      "ls_scene_09_w01"
+    ],
+    "ls_scene_11_w01": [
+      "ls_scene_11_w01"
+    ],
+    "ls_scene_12_w01": [
+      "ls_scene_12_w01"
+    ],
+    "ls_scene_26_w01": [
+      "ls_scene_26_w01"
+    ],
+    "ls_scene_31_w01": [
+      "ls_scene_31_w01"
+    ]
+  },
+  "counts": {
+    "all": {
+      "samples": 1691,
+      "positive": 642,
+      "negative": 959,
+      "missing": 90,
+      "ignore": 0,
+      "labeled": 1601,
+      "shape_evaluable": 470,
+      "sites": 62,
+      "locations": 15,
+      "scenes": 345
+    },
+    "train": {
+      "samples": 1348,
+      "positive": 522,
+      "negative": 760,
+      "missing": 66,
+      "ignore": 0,
+      "labeled": 1282,
+      "shape_evaluable": 381,
+      "sites": 48,
+      "locations": 12,
+      "scenes": 288
+    },
+    "validation": {
+      "samples": 343,
+      "positive": 120,
+      "negative": 199,
+      "missing": 24,
+      "ignore": 0,
+      "labeled": 319,
+      "shape_evaluable": 89,
+      "sites": 14,
+      "locations": 3,
+      "scenes": 57
+    }
+  },
+  "validation_ratios": {
+    "samples": 0.20283855706682435,
+    "positive": 0.18691588785046728,
+    "negative": 0.20750782064650677,
+    "missing": 0.26666666666666666,
+    "ignore": null,
+    "labeled": 0.19925046845721425,
+    "shape_evaluable": 0.18936170212765957,
+    "sites": 0.22580645161290322,
+    "locations": 0.2,
+    "scenes": 0.16521739130434782
+  },
+  "selection": {
+    "validation_group_count": "round(0.2 * connected_groups), clipped to [1, G-1]",
+    "primary": "absolute deviation of explicit labeled sample fraction from 0.2",
+    "secondary": "sum of absolute positive, negative, evaluable shape and site fraction deviations from 0.2",
+    "final_tiebreak": "sorted combinations, random.Random(42).choice",
+    "objective": [
+      0.0007495315427857589,
+      0.05703668228128314
+    ],
+    "tied_candidates": 1,
+    "site_denominator": "unique (location, site) including missing/ignore dates",
+    "shape_denominator": "valid nonempty positive GT with continuous area >= 10 px2",
+    "model_scores_used": false
+  },
+  "independence_limitations": [
+    "Only location identity and exact duplicate images establish connected groups here",
+    "No confirmed cross-location spatial-overlap metadata was supplied; partial geographic overlap remains unverified"
+  ],
+  "initial_cv": false,
+  "sha256": "6f2d58d1a68cd27e1c2df2e97f660d8e99008175a83e622c361b1d82107dde89"
+}

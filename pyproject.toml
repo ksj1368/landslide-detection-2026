@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "landslide-detection-s030"
+version = "0.1.0"
+description = "S030 landslide polygon detection and selected training workflow"
+requires-python = ">=3.12,<3.13"
+dependencies = ["numpy==2.5.3", "torch==2.14.0", "shapely==2.1.2", "scikit-image==0.26.0"]
+
+[project.optional-dependencies]
+figures = ["matplotlib==3.11.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

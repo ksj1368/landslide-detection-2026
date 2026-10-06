@@ -1,0 +1,65 @@
+{
+  "split_id": "d95-inner-group3-v1",
+  "parent_split_id": "fixed-group-holdout-v1-6f2d58d1a68c",
+  "seed": 42,
+  "validation_locations": [
+    [
+      "ls_scene_01_w01",
+      "ls_scene_01_w07",
+      "ls_scene_01_w08",
+      "ls_scene_09_w01"
+    ],
+    [
+      "ls_scene_01_w03",
+      "ls_scene_01_w05",
+      "ls_scene_01_w06",
+      "ls_scene_11_w01"
+    ],
+    [
+      "ls_scene_01_w09",
+      "ls_scene_01_w10",
+      "ls_scene_26_w01",
+      "ls_scene_31_w01"
+    ]
+  ],
+  "expected_validation_counts": [
+    [
+      382,
+      349,
+      187,
+      162,
+      46,
+      141,
+      10
+    ],
+    [
+      339,
+      334,
+      159,
+      175,
+      47,
+      112,
+      9
+    ],
+    [
+      627,
+      599,
+      176,
+      423,
+      47,
+      128,
+      14
+    ]
+  ],
+  "count_columns": [
+    "samples",
+    "labeled",
+    "positive",
+    "negative",
+    "small_positive",
+    "shape_evaluable",
+    "shape_sites"
+  ],
+  "selection": "Frozen allocation: four validation locations per fold; minimum labeled-count range 265 among 5775 assignments; no model scores used",
+  "spatial_overlap": "partial cross-location overlap unverified"
+}

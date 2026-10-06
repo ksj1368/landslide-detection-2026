@@ -1,0 +1,37 @@
+{
+  "model": "small_unet_v1",
+  "channels": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "roi_size": 96,
+  "input_bands": [
+    "R",
+    "G",
+    "B",
+    "NIR",
+    "prior"
+  ],
+  "reflectance_divisor": 10000.0,
+  "normalization": "none",
+  "seed": 42,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "loss": "segmentation_BCE_plus_presence_BCE",
+  "scope": "holdout",
+  "presence_threshold": 0.5,
+  "mask_threshold": 0.5,
+  "experiment_id": "E002",
+  "device": "mps",
+  "batch_size": 32,
+  "updates": 5000,
+  "validation_every": 250,
+  "augmentation": "d4",
+  "expected_invalid_gt": 3,
+  "checkpoint_selection": "minimum_validation_loss",
+  "split_id": "fixed-group-holdout-v1-6f2d58d1a68c",
+  "origin_policy": "shift_inside",
+  "input_index": "none"
+}

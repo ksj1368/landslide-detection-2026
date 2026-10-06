@@ -1,0 +1,254 @@
+{
+  "split": {
+    "split_id": "d100-inner-selection-v1-fold1",
+    "seed": 42,
+    "fold_id": 1,
+    "parent_split_id": "fixed-group-holdout-v1-6f2d58d1a68c",
+    "train_locations": [
+      "ls_scene_01_w05",
+      "ls_scene_01_w09",
+      "ls_scene_01_w10",
+      "ls_scene_11_w01",
+      "ls_scene_26_w01",
+      "ls_scene_31_w01"
+    ],
+    "validation_locations": [
+      "ls_scene_01_w03",
+      "ls_scene_01_w06"
+    ],
+    "connected_groups": {
+      "ls_scene_01_w01": [
+        "ls_scene_01_w01"
+      ],
+      "ls_scene_01_w03": [
+        "ls_scene_01_w03"
+      ],
+      "ls_scene_01_w05": [
+        "ls_scene_01_w05"
+      ],
+      "ls_scene_01_w06": [
+        "ls_scene_01_w06"
+      ],
+      "ls_scene_01_w07": [
+        "ls_scene_01_w07"
+      ],
+      "ls_scene_01_w08": [
+        "ls_scene_01_w08"
+      ],
+      "ls_scene_01_w09": [
+        "ls_scene_01_w09"
+      ],
+      "ls_scene_01_w10": [
+        "ls_scene_01_w10"
+      ],
+      "ls_scene_09_w01": [
+        "ls_scene_09_w01"
+      ],
+      "ls_scene_11_w01": [
+        "ls_scene_11_w01"
+      ],
+      "ls_scene_26_w01": [
+        "ls_scene_26_w01"
+      ],
+      "ls_scene_31_w01": [
+        "ls_scene_31_w01"
+      ]
+    },
+    "selection": "Among connected-group-safe pairs, minimize sum((pair_count/outer_train_count-.25)^2) for labeled, positive, negative, small_positive, shape_evaluable; lexical tie. Require all five counts in both partitions >0. No model scores.",
+    "counts": {
+      "all": {
+        "samples": 966,
+        "positive": 335,
+        "negative": 598,
+        "missing": 33,
+        "ignore": 0,
+        "labeled": 933,
+        "shape_evaluable": 240,
+        "sites": 34,
+        "locations": 8,
+        "scenes": 182
+      },
+      "train": {
+        "samples": 742,
+        "positive": 239,
+        "negative": 471,
+        "missing": 32,
+        "ignore": 0,
+        "labeled": 710,
+        "shape_evaluable": 181,
+        "sites": 27,
+        "locations": 6,
+        "scenes": 118
+      },
+      "validation": {
+        "samples": 224,
+        "positive": 96,
+        "negative": 127,
+        "missing": 1,
+        "ignore": 0,
+        "labeled": 223,
+        "shape_evaluable": 59,
+        "sites": 7,
+        "locations": 2,
+        "scenes": 64
+      }
+    },
+    "outer_locations": [
+      "ls_scene_01_w01",
+      "ls_scene_01_w07",
+      "ls_scene_01_w08",
+      "ls_scene_09_w01"
+    ],
+    "allocation_cost": 0.023516733147874173
+  },
+  "statistics": {
+    "scope": "training_fit",
+    "bands": [
+      "R",
+      "G",
+      "B",
+      "NIR"
+    ],
+    "image_count": 710,
+    "pixel_count": 6543360,
+    "validity": "inside & official_valid & numeric_valid",
+    "mean": [
+      0.03583998010547068,
+      0.057503136764300085,
+      0.030657705136370762,
+      0.36372421296904456
+    ],
+    "std": [
+      0.028219048474456557,
+      0.02974524362282448,
+      0.027024082210856306,
+      0.11574992633843152
+    ],
+    "median": [
+      0.029999999329447746,
+      0.05460000038146973,
+      0.02800000086426735,
+      0.36079999804496765
+    ],
+    "iqr": [
+      0.014999998733401299,
+      0.02640000358223915,
+      0.01289999857544899,
+      0.171999990940094
+    ],
+    "display_limits": [
+      [
+        0.013899999670684338,
+        0.01810000091791153,
+        0.004900000058114529,
+        0.13699999451637268
+      ],
+      [
+        0.0989999994635582,
+        0.10920000076293945,
+        0.07519999891519547,
+        0.5879999995231628
+      ]
+    ],
+    "degenerate_std": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "degenerate_iqr": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "degenerate_scale_replacement": null,
+    "fit_partition": "frozen_train",
+    "split_id": "d100-inner-selection-v1-fold1",
+    "seed": 42,
+    "fit_samples": 710,
+    "population": "supervised train ROI; overlapping ROIs counted repeatedly",
+    "reflectance_divisor": 10000,
+    "application": "D100 inner supervised train only; selection and outer excluded"
+  },
+  "config": {
+    "model": "small_unet_v1",
+    "channels": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "roi_size": 96,
+    "input_bands": [
+      "R",
+      "G",
+      "B",
+      "NIR",
+      "prior",
+      "NDVI"
+    ],
+    "reflectance_divisor": 10000.0,
+    "normalization": "zscore",
+    "seed": 42,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "loss": "segmentation_BCE_Dice_plus_presence_BCE",
+    "scope": "holdout",
+    "presence_threshold": 0.5,
+    "mask_threshold": 0.5,
+    "experiment_id": "E086",
+    "device": "mps",
+    "batch_size": 32,
+    "updates": 5000,
+    "validation_every": 250,
+    "augmentation": "d4",
+    "expected_invalid_gt": 3,
+    "checkpoint_selection": "bce_and_d4_reference",
+    "split_id": "d100-inner-selection-v1-fold1",
+    "origin_policy": "shift_inside",
+    "roi_policy_version": 1,
+    "loss_parameters": {
+      "epsilon": 1e-06,
+      "bce_weight": 0.5,
+      "dice_weight": 0.5,
+      "aggregation": "positive_roi_mean",
+      "empty_positive": "bce_only"
+    },
+    "validation_loss_contract": "unweighted_segmentation_BCE_plus_presence_BCE",
+    "input_index": "NDVI",
+    "index_calculation": {
+      "version": "reflectance_fp32_to_float64_v1",
+      "denominator_epsilon": 1e-08,
+      "invalid_policy": "error_on_usable",
+      "output_dtype": "float32",
+      "clipping": false
+    },
+    "diagnostics": true,
+    "scheduler": {
+      "name": "constant"
+    },
+    "normalization_statistics": {
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "NIR"
+      ],
+      "mean": [
+        0.03583998010547068,
+        0.057503136764300085,
+        0.030657705136370762,
+        0.36372421296904456
+      ],
+      "std": [
+        0.028219048474456557,
+        0.02974524362282448,
+        0.027024082210856306,
+        0.11574992633843152
+      ]
+    },
+    "fold_id": 1,
+    "primary_evaluation_checkpoint": "best_d4.pt; same-trajectory best.pt and last.pt controls"
+  }
+}

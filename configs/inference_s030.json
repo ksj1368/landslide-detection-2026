@@ -1,0 +1,101 @@
+{
+  "model": "small_unet_coverage_baseline_presence_fold3_v1",
+  "channels": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "input_bands": [
+    "R",
+    "G",
+    "B",
+    "NIR",
+    "prior",
+    "NDVI"
+  ],
+  "reflectance_divisor": 10000.0,
+  "seed": 42,
+  "presence_threshold": 0.5,
+  "mask_threshold": 0.5,
+  "roi_size": 96,
+  "origin_policy": "shift_inside",
+  "input_index": "NDVI",
+  "index_calculation": {
+    "version": "reflectance_fp32_to_float64_v1",
+    "denominator_epsilon": 1e-08,
+    "invalid_policy": "error_on_usable",
+    "output_dtype": "float32",
+    "clipping": false
+  },
+  "normalization": "none",
+  "member_normalization_statistics": [
+    {
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "NIR"
+      ],
+      "mean": [
+        0.03583998010547068,
+        0.057503136764300085,
+        0.030657705136370762,
+        0.36372421296904456
+      ],
+      "std": [
+        0.028219048474456557,
+        0.02974524362282448,
+        0.027024082210856306,
+        0.11574992633843152
+      ]
+    },
+    {
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "NIR"
+      ],
+      "mean": [
+        0.034767206637743714,
+        0.057712585568073974,
+        0.030090168961641097,
+        0.3755008066385663
+      ],
+      "std": [
+        0.026672007959359388,
+        0.02890020988702433,
+        0.025895772175515416,
+        0.11345783361448765
+      ]
+    },
+    {
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "NIR"
+      ],
+      "mean": [
+        0.03765486790930006,
+        0.060322267239505706,
+        0.031079442744815812,
+        0.38570688106657397
+      ],
+      "std": [
+        0.026716792850559945,
+        0.025683873024117964,
+        0.021214018830975314,
+        0.1111717391425917
+      ]
+    }
+  ],
+  "checkpoint": "weights/model.pt",
+  "tta": "d4",
+  "postprocessing": {
+    "presence_threshold": 0.2,
+    "mask_threshold": 0.4,
+    "method": "probability_contour"
+  }
+}
